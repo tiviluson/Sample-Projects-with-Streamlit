@@ -1,9 +1,10 @@
 import streamlit as st
+from os import path
 
 st.set_page_config(page_title='Word Correction', page_icon=':writing_hand:', menu_items={
                    'About': "Made by [:rainbow[*tiviluson*] :sunglasses: :raccoon:](https://github.com/tiviluson) "})
 st.title('Word Correction using Levenshtein distance')
-st.logo('assets/logo.png')
+st.logo(path.join('assets', 'logo.png'))
 st.caption(
     'by [:rainbow[*tiviluson*] :sunglasses: :raccoon:](https://github.com/tiviluson) ')
 
@@ -83,7 +84,8 @@ def init(num_of_suggestions):
 
 def main() -> None:
     num_of_suggestions = 5
-    vocab = load_vocab('Word_correction/google-10000-english-usa.txt')
+    vocab = load_vocab(path.join('Word_correction',
+                       'google-10000-english-usa.txt'))
 
     if 'distance_cache' not in st.session_state:
         st.session_state.distance_cache = {}
