@@ -1,4 +1,7 @@
 import streamlit as st
+from os import chdir
+
+chdir('Word_correction')
 
 
 st.set_page_config(page_title='Word Correction', page_icon=':writing_hand:', menu_items={
@@ -16,7 +19,7 @@ def load_vocab(file_path) -> list:
         vocab.sort()
     return vocab
 
-  
+
 def levenshtein_distance(input_word, output_word):
     if (input_word, output_word) in st.session_state.distance_cache:
         return st.session_state.distance_cache[(input_word, output_word)]
@@ -85,7 +88,7 @@ def init(num_of_suggestions):
 def main() -> None:
     num_of_suggestions = 5
     vocab = load_vocab('./google-10000-english-usa.txt')
-    
+
     if 'distance_cache' not in st.session_state:
         st.session_state.distance_cache = {}
 
@@ -100,6 +103,7 @@ def main() -> None:
                 input_word, vocab, num_of_suggestions)
             show_and_select_suggestions(output_text_placeholder,
                                         option_placeholders, buttons, suggestions)
+
 
 if __name__ == '__main__':
     main()
