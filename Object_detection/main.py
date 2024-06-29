@@ -1,4 +1,3 @@
-from cProfile import label
 import streamlit as st
 from os import path
 import cv2
@@ -44,7 +43,7 @@ def annotate_image(image, detections, labels, confidence_threshold=0.5):
             cv2.rectangle(image, (start_x, start_y),
                           (end_x, end_y), (0, 255, 0), 5)
             cv2.putText(image, label, (start_x, start_y - 15),
-                        cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 5)
+                        cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 0), 5)
     return image
 
 
