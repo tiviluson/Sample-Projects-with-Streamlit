@@ -39,5 +39,5 @@ The MobilenetSSD_deploy model is a lightweight neural network designed for mobil
    ![alt text](../assets/object_detection_2.png)
 
 ### Usage
-Drop an image (*.jpeg*, *.jpg*, *.png*) from your local drive and all classes will be automatically annotated.
+Once the application is running, open your web browser and go to `http://localhost:8501`. Drop an image (*.jpeg*, *.jpg*, *.png*) from your local drive and all classes will be automatically annotated.
 ![alt text](../assets/object_detection_3.png)
