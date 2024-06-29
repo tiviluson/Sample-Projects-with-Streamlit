@@ -16,7 +16,7 @@ You can also visit the live application at [word-correction-tiviluson.streamlit.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/streamlit-word-corrector.git
+   git clone https://github.com/tiviluson/Sample-Projects-with-Streamlit
 1. Navigate to the directory of the *specific* project
    ```bash
    cd Word_correction
